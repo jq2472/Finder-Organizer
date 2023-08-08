@@ -4,7 +4,11 @@ Using MAC OS
 
 # References
 [ functions ]
-  * https://realpython.com/working-with-files-in-python/#pythons-with-open-as-pattern
+  * getting files directories from os :
+    https://realpython.com/working-with-files-in-python/#pythons-with-open-as-pattern
+  * watchdog / monitering file system activity :
+    https://thepythoncorner.com/posts/2019-01-13-how-to-create-a-watchdog-in-python-to-look-for-filesystem-changes/
+    https://www.geeksforgeeks.org/create-a-watchdog-in-python-to-look-for-filesystem-changes/
 
 [ documentation ] 
   * https://docs.python.org/3/using/mac.html
