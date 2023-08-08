@@ -5,8 +5,10 @@ Using MAC OS
 # References
 functions 
   * https://realpython.com/working-with-files-in-python/#pythons-with-open-as-pattern
+
 documentation
   * https://docs.python.org/3/using/mac.html
+
 tutorials
 
 questions raised
