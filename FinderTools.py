@@ -35,8 +35,8 @@ def detect_duplicates(hashed, file):
             print(f"{file} has been deleted")
         else:
             unique_files[hashed] = file
-    except FileNotFoundError:
-        print("ruh roh")
+    except Exception as err:
+        print(f"{err} ERROR FOUND from removing duplicates")
 
 
 def move(dest, file):
@@ -65,7 +65,7 @@ def organize_folders(file):
     except shutil.Error as err:
         # file already exists in that location,
         # continue to move and replace with the latest version
-        print(err)
+        print(f"{err} ERROR FOUND from organizing files")
 
 
 def scan_files(files, rmv, organize):
@@ -82,29 +82,35 @@ def scan_files(files, rmv, organize):
         # hash ea. file
         for file in fileNames:
             file_path = Path(os.path.join(dirPath, file))
+            # True if the file is writable, or False if the file is not writable.
+            if os.access(file_path, os.W_OK) == 0:
 
-            if organize is True:
-                organize_folders(file_path)
-            if rmv is True:
-                # files that are links or symlinks shouldn't be deleted
-                if Path(file_path).is_symlink() is False or Path(file_path).is_file() is False:
-                    # convert our file into a md5 hash and get the hash string
-                    hashed = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
-                    detect_duplicates(hashed, file_path)
-                else:
-                    break
+                # if organize is True:
+                #     organize_folders(file_path)
+                if rmv is True:
+                    # files that are links or symlinks shouldn't be deleted
+                    if Path(file_path).is_symlink() is False or Path(file_path).is_file() is False:
+                        # convert our file into a md5 hash and get the hash string
+                        hashed = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
+                        detect_duplicates(hashed, file_path)
+                    else:
+                        break
 
 
 def main(rmv, organize):
     """
     calls the function to start removing duplicate files
     """
-    Tk().withdraw()
-    print("Select a folder & we will search under this umbrella directory for all the duplicate and redundant files.")
-    file_path = askdirectory(title="Select a folder")
-    list_of_files = os.walk(file_path)
-    # file actions
-    scan_files(list_of_files, rmv, organize)
+    try:
+        Tk().withdraw()
+        print("Select a folder & we will search under this umbrella directory for all the duplicate and redundant files.")
+        file_path = askdirectory(title="Select a folder")
+        list_of_files = os.walk(file_path)
+        # file actions
+        scan_files(list_of_files, rmv, organize)
+        print("completed task(s)")
+    except Exception as err:
+        print(f"{err} from main call")
 
 
 if __name__ == "__main__":

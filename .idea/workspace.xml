@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f978c98-5e2a-41e2-bce1-7fe40799b446" name="Changes" comment="implemented more organizing tools / grouping.&#10;Next steps: &#10;* recognize existing files and directories&#10;* create dir if not present (sound, img, etc.) &#10;* otherwise update with the latest version of the file&#10;* automate the utility to start / end whenever I'm on chrome&#10;* make the filepaths more user-versatile / not hard coded to my own user library.&#10;* try to refine O(n) time complexity? Not sure how so since you're really just going through all the files.">
+    <list default="true" id="5f978c98-5e2a-41e2-bce1-7fe40799b446" name="Changes" comment="implemented individual findertools utilities to work separately.&#10;&#10;Next steps: &#10;* recognize existing files and directories&#10;* create dir if not present (sound, img, etc.) &#10;* otherwise update with the latest version of the file&#10;* automate the utility to start / end whenever I'm on chrome&#10;* make the filepaths more user-versatile / not hard coded to my own user library.&#10;* try to refine O(n) time complexity? Not sure how so since you're really just going through all the files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinderTools.py" beforeDir="false" afterPath="$PROJECT_DIR$/FinderTools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileManagement.py" afterDir="false" />
@@ -40,23 +40,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Python&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -132,7 +133,8 @@
       <workItem from="1691522094646" duration="14456000" />
       <workItem from="1691553494241" duration="28000" />
       <workItem from="1691553532659" duration="2156000" />
-      <workItem from="1691583380087" duration="8742000" />
+      <workItem from="1691583380087" duration="8850000" />
+      <workItem from="1691620857842" duration="3174000" />
     </task>
     <task id="LOCAL-00001" summary="currently only tracks changes using watchdog in the current directory : &#10;2023-08-08 19:52:21 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:21 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:28 - Deleted file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:28 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store&#10;2023-08-08 19:52:45 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Modified file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store">
       <created>1691538814182</created>
@@ -176,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691589624391</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="implemented individual findertools utilities to work separately.&#10;&#10;Next steps: &#10;* recognize existing files and directories&#10;* create dir if not present (sound, img, etc.) &#10;* otherwise update with the latest version of the file&#10;* automate the utility to start / end whenever I'm on chrome&#10;* make the filepaths more user-versatile / not hard coded to my own user library.&#10;* try to refine O(n) time complexity? Not sure how so since you're really just going through all the files.">
+      <created>1691620850004</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1691620850004</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,16 +208,12 @@
     <MESSAGE value="error checking issues...Not sure how to handle the FNFE for things likes /users/jolinqiu/downloads/.com.google.chrome.mc06cd'(?) // where its coming from rn&#10;&#10;Terminal Output:&#10;Select a folder &amp; we will search under this umbrella directory for all the duplicate and redundant files.&#10;/Users/jolinqiu/duplicateTest/liar copy 3.png has been deleted&#10;/Users/jolinqiu/duplicateTest/exercise answers copy.pdf has been deleted&#10;/Users/jolinqiu/duplicateTest/get-pip copy.py has been deleted&#10;/users/jolinqiu/downloads/.com.google.chrome.mc06cd has been created!&#10;/Users/jolinqiu/Downloads has been modified&#10;/Users/jolinqiu/Downloads/.com.google.Chrome.mc06cD has been modified&#10;ruh roh.... someone deleted /Users/jolinqiu/Downloads/.com.google.chrome.mc06cd&#10;/Users/jolinqiu/Downloads has been modified&#10;/users/jolinqiu/downloads/.com.google.chrome.mc06cd has been created!&#10;Exception in thread Thread-1:&#10;Traceback (most recent call last):&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py&quot;, line 1016, in _bootstrap_inner&#10;    self.run()&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/observers/api.py&quot;, line 204, in run&#10;    self.dispatch_events(self.event_queue)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/observers/api.py&quot;, line 380, in dispatch_events&#10;    handler.dispatch(event)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/events.py&quot;, line 424, in dispatch&#10;    super().dispatch(event)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/events.py&quot;, line 276, in dispatch&#10;    {&#10;  File &quot;/Users/jolinqiu/CSCIprojects/Finder-Organizer/src/FileManagement.py&quot;, line 64, in on_created&#10;    os.remove(item)&#10;FileNotFoundError: [Errno 2] No such file or directory: '/users/jolinqiu/downloads/.com.google.chrome.mc06cd'&#10;&#10;Process finished with exit code 1" />
     <MESSAGE value="modification manager" />
     <MESSAGE value="implemented more organizing tools / grouping.&#10;Next steps: &#10;* recognize existing files and directories&#10;* create dir if not present (sound, img, etc.) &#10;* otherwise update with the latest version of the file&#10;* automate the utility to start / end whenever I'm on chrome&#10;* make the filepaths more user-versatile / not hard coded to my own user library.&#10;* try to refine O(n) time complexity? Not sure how so since you're really just going through all the files." />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented more organizing tools / grouping.&#10;Next steps: &#10;* recognize existing files and directories&#10;* create dir if not present (sound, img, etc.) &#10;* otherwise update with the latest version of the file&#10;* automate the utility to start / end whenever I'm on chrome&#10;* make the filepaths more user-versatile / not hard coded to my own user library.&#10;* try to refine O(n) time complexity? Not sure how so since you're really just going through all the files." />
+    <MESSAGE value="implemented individual findertools utilities to work separately.&#10;&#10;Next steps: &#10;* recognize existing files and directories&#10;* create dir if not present (sound, img, etc.) &#10;* otherwise update with the latest version of the file&#10;* automate the utility to start / end whenever I'm on chrome&#10;* make the filepaths more user-versatile / not hard coded to my own user library.&#10;* try to refine O(n) time complexity? Not sure how so since you're really just going through all the files." />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented individual findertools utilities to work separately.&#10;&#10;Next steps: &#10;* recognize existing files and directories&#10;* create dir if not present (sound, img, etc.) &#10;* otherwise update with the latest version of the file&#10;* automate the utility to start / end whenever I'm on chrome&#10;* make the filepaths more user-versatile / not hard coded to my own user library.&#10;* try to refine O(n) time complexity? Not sure how so since you're really just going through all the files." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FinderTools.py</url>
-          <line>84</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FinderTools.py</url>
           <line>47</line>
@@ -223,7 +228,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Finder_Organizer$FileManagement.coverage" NAME="FileManagement Coverage Results" MODIFIED="1691620745711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/Finder_Organizer$FileManagement.coverage" NAME="FileManagement Coverage Results" MODIFIED="1691623824567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Finder_Organizer$DuplicateRemover.coverage" NAME="FinderTools Coverage Results" MODIFIED="1691620078216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

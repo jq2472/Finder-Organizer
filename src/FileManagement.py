@@ -7,7 +7,7 @@ import os
 # initially imported modules
 import shutil
 import time
-
+import sys
 import pymsgbox
 # make changes at a time a file is created or modified
 from watchdog.events import PatternMatchingEventHandler
@@ -48,14 +48,15 @@ def ask_user():
                                "(Y/N)")
     response1_organize = pymsgbox.prompt("Would you like organize your files? (Y/N)")
     if len(response_rmv) == 1 and len(response_rmv) == 1:
-        if response_rmv.upper() == "Y" and response1_organize.upper() == "Y":
-            FinderTools.main(True, True)
-        elif response_rmv.upper() == "Y" and response1_organize.upper() == "N":
-            FinderTools.main(True, False)
-        elif response_rmv.upper() == "N" and response1_organize.upper() == "Y":
-            FinderTools.main(False, True)
-        else:
-            print("please respond with Y or N to indicate yes or no respectively")
+        FinderTools.main(True, True)
+        # if response_rmv.upper() == "Y" and response1_organize.upper() == "Y":
+        #     FinderTools.main(True, True)
+        # elif response_rmv.upper() == "Y" and response1_organize.upper() == "N":
+        #     FinderTools.main(True, False)
+        # elif response_rmv.upper() == "N" and response1_organize.upper() == "Y":
+        #     FinderTools.main(False, True)
+        # else:
+        #     print("please respond with Y or N to indicate yes or no respectively")
 
 
 # event handler
