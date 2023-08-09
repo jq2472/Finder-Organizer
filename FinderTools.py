@@ -68,7 +68,7 @@ def organize_folders(file):
         print(err)
 
 
-def scan_files(files):
+def scan_files(files, rmv, organize):
     """
     Organizing:
     call helper function
@@ -82,18 +82,20 @@ def scan_files(files):
         # hash ea. file
         for file in fileNames:
             file_path = Path(os.path.join(dirPath, file))
-            organize_folders(file_path)
-            #
-            # # files that are links or symlinks shouldn't be deleted
-            # if Path(file_path).is_symlink() is False or Path(file_path).is_file() is False:
-            #     # convert our file into a md5 hash and get the hash string
-            #     hashed = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
-            #     detect_duplicates(hashed, file_path)
-            # else:
-            #     break
+
+            if organize is True:
+                organize_folders(file_path)
+            if rmv is True:
+                # files that are links or symlinks shouldn't be deleted
+                if Path(file_path).is_symlink() is False or Path(file_path).is_file() is False:
+                    # convert our file into a md5 hash and get the hash string
+                    hashed = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
+                    detect_duplicates(hashed, file_path)
+                else:
+                    break
 
 
-def main():
+def main(rmv, organize):
     """
     calls the function to start removing duplicate files
     """
@@ -102,7 +104,7 @@ def main():
     file_path = askdirectory(title="Select a folder")
     list_of_files = os.walk(file_path)
     # file actions
-    scan_files(list_of_files)
+    scan_files(list_of_files, rmv, organize)
 
 
 if __name__ == "__main__":

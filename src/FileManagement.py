@@ -33,25 +33,6 @@ def on_deleted(event):
     print(f"ruh roh.... someone deleted {event.src_path}")
 
 def on_modified(event):
-    # # os.scandir() returns a Python iterable containing the names of the files
-    # #  and subdirectories in the directory given by the path argument:
-    # #  items = os.scandir(filePath)
-    # with os.scandir(filePath) as items:
-    #     for item in items:
-    #         name = item.name
-    #         dest = filePath
-    #         if name.endswith(".wav") or name.endswith("mp3"):
-    #             if (item.stat().st_size < 25000000) or "SFX" in name:
-    #                 dest = dest_dir_sfx
-    #             else:
-    #                 dest = dest_dir_music
-    #             move(dest, item, name)
-    #         elif name.endswith(".mov") or name.endswith(".mp4"):
-    #             dest = dest_dir_video
-    #             move(dest, item, name)
-    #         elif name.endswith(".jpg") or name.endswith(".jpeg") or name.endswith(".png"):
-    #             dest = dest_dir_image
-    #             move(dest, item, name)
     print(f"{event.src_path} has been modified")
 
 
@@ -60,24 +41,21 @@ def on_moved(event):
     print(f"moved {event.src_path} to {event.dest_path}")
 
 
-# unique / special functions
-def remove_current_dupes(response):
-    """
-    Gives the user the option to scan current directory and remove
-    existing duplicates.
-    :param response:
-    """
-    if response is True:
-        DuplicateRemover.main()
-
-
 def ask_user():
-    response = pymsgbox.prompt("Would you like to scan and remove the current Directory "
+    response_rmv = pymsgbox.prompt("Would you like to scan and remove the current Directory "
                                "for duplicate files?\nDo note that the amount of time this "
                                "takes is variable on the amount of data you have. "
                                "(Y/N)")
-    if len(response) == 1 and response.upper() == "Y":
-        remove_current_dupes(True)
+    response1_organize = pymsgbox.prompt("Would you like organize your files? (Y/N)")
+    if len(response_rmv) == 1 and len(response_rmv) == 1:
+        if response_rmv.upper() == "Y" and response1_organize.upper() == "Y":
+            FinderTools.main(True, True)
+        elif response_rmv.upper() == "Y" and response1_organize.upper() == "N":
+            FinderTools.main(True, False)
+        elif response_rmv.upper() == "N" and response1_organize.upper() == "Y":
+            FinderTools.main(False, True)
+        else:
+            print("please respond with Y or N to indicate yes or no respectively")
 
 
 # event handler
