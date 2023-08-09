@@ -9,9 +9,15 @@ Using MAC OS
   * watchdog / monitering file system activity :
     https://thepythoncorner.com/posts/2019-01-13-how-to-create-a-watchdog-in-python-to-look-for-filesystem-changes/
     https://www.geeksforgeeks.org/create-a-watchdog-in-python-to-look-for-filesystem-changes/
+* scanning directory (for removing duplicates) : 
+  https://www.geeksforgeeks.org/deleting-duplicate-files-using-python/
+  https://stackoverflow.com/questions/748675/finding-duplicate-files-and-removing-them
+  https://www.geeksforgeeks.org/deleting-duplicate-files-using-python/
+  
 
-[ documentation ] 
+[ other documentation ] 
   * https://docs.python.org/3/using/mac.html
+  * https://pythonhosted.org/watchdog/
 
 [ tutorials ]
  * https://www.youtube.com/watch?v=NCvI-K0Gp90
