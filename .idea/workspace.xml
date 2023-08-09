@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f978c98-5e2a-41e2-bce1-7fe40799b446" name="Changes" comment="error checking issues...Not sure how to handle the FNFE for things likes /users/jolinqiu/downloads/.com.google.chrome.mc06cd'(?) // where its coming from rn&#10;&#10;Terminal Output:&#10;Select a folder &amp; we will search under this umbrella directory for all the duplicate and redundant files.&#10;/Users/jolinqiu/duplicateTest/liar copy 3.png has been deleted&#10;/Users/jolinqiu/duplicateTest/exercise answers copy.pdf has been deleted&#10;/Users/jolinqiu/duplicateTest/get-pip copy.py has been deleted&#10;/users/jolinqiu/downloads/.com.google.chrome.mc06cd has been created!&#10;/Users/jolinqiu/Downloads has been modified&#10;/Users/jolinqiu/Downloads/.com.google.Chrome.mc06cD has been modified&#10;ruh roh.... someone deleted /Users/jolinqiu/Downloads/.com.google.chrome.mc06cd&#10;/Users/jolinqiu/Downloads has been modified&#10;/users/jolinqiu/downloads/.com.google.chrome.mc06cd has been created!&#10;Exception in thread Thread-1:&#10;Traceback (most recent call last):&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py&quot;, line 1016, in _bootstrap_inner&#10;    self.run()&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/observers/api.py&quot;, line 204, in run&#10;    self.dispatch_events(self.event_queue)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/observers/api.py&quot;, line 380, in dispatch_events&#10;    handler.dispatch(event)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/events.py&quot;, line 424, in dispatch&#10;    super().dispatch(event)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/events.py&quot;, line 276, in dispatch&#10;    {&#10;  File &quot;/Users/jolinqiu/CSCIprojects/Finder-Organizer/src/FileManagement.py&quot;, line 64, in on_created&#10;    os.remove(item)&#10;FileNotFoundError: [Errno 2] No such file or directory: '/users/jolinqiu/downloads/.com.google.chrome.mc06cd'&#10;&#10;Process finished with exit code 1">
+    <list default="true" id="5f978c98-5e2a-41e2-bce1-7fe40799b446" name="Changes" comment="modification manager">
+      <change afterPath="$PROJECT_DIR$/FinderTools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuplicateRemover.py" beforeDir="false" afterPath="$PROJECT_DIR$/DuplicateRemover.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DuplicateRemover.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileManagement.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,29 +66,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.FileManagement">
-    <configuration name="DuplicateRemover" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Finder-Organizer" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DuplicateRemover.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.FinderTools">
     <configuration name="FileManagement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Finder-Organizer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,10 +89,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="FinderTools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Finder-Organizer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FinderTools.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.FinderTools" />
         <item itemvalue="Python.FileManagement" />
-        <item itemvalue="Python.DuplicateRemover" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +133,7 @@
       <workItem from="1691522094646" duration="14456000" />
       <workItem from="1691553494241" duration="28000" />
       <workItem from="1691553532659" duration="2156000" />
-      <workItem from="1691583380087" duration="2115000" />
+      <workItem from="1691583380087" duration="5929000" />
     </task>
     <task id="LOCAL-00001" summary="currently only tracks changes using watchdog in the current directory : &#10;2023-08-08 19:52:21 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:21 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:28 - Deleted file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:28 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store&#10;2023-08-08 19:52:45 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Modified file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store">
       <created>1691538814182</created>
@@ -162,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691555672400</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="modification manager">
+      <created>1691585519177</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1691585519178</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,10 +191,32 @@
     <MESSAGE value="currently only tracks changes using watchdog in the current directory : &#10;2023-08-08 19:52:21 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:21 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:28 - Deleted file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:28 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store&#10;2023-08-08 19:52:45 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Modified file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store" />
     <MESSAGE value="allowed control over actions to take with new additions,  deletions, and modifications of files in the SAME directory // doesn't recognize changes outside" />
     <MESSAGE value="error checking issues...Not sure how to handle the FNFE for things likes /users/jolinqiu/downloads/.com.google.chrome.mc06cd'(?) // where its coming from rn&#10;&#10;Terminal Output:&#10;Select a folder &amp; we will search under this umbrella directory for all the duplicate and redundant files.&#10;/Users/jolinqiu/duplicateTest/liar copy 3.png has been deleted&#10;/Users/jolinqiu/duplicateTest/exercise answers copy.pdf has been deleted&#10;/Users/jolinqiu/duplicateTest/get-pip copy.py has been deleted&#10;/users/jolinqiu/downloads/.com.google.chrome.mc06cd has been created!&#10;/Users/jolinqiu/Downloads has been modified&#10;/Users/jolinqiu/Downloads/.com.google.Chrome.mc06cD has been modified&#10;ruh roh.... someone deleted /Users/jolinqiu/Downloads/.com.google.chrome.mc06cd&#10;/Users/jolinqiu/Downloads has been modified&#10;/users/jolinqiu/downloads/.com.google.chrome.mc06cd has been created!&#10;Exception in thread Thread-1:&#10;Traceback (most recent call last):&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py&quot;, line 1016, in _bootstrap_inner&#10;    self.run()&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/observers/api.py&quot;, line 204, in run&#10;    self.dispatch_events(self.event_queue)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/observers/api.py&quot;, line 380, in dispatch_events&#10;    handler.dispatch(event)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/events.py&quot;, line 424, in dispatch&#10;    super().dispatch(event)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/events.py&quot;, line 276, in dispatch&#10;    {&#10;  File &quot;/Users/jolinqiu/CSCIprojects/Finder-Organizer/src/FileManagement.py&quot;, line 64, in on_created&#10;    os.remove(item)&#10;FileNotFoundError: [Errno 2] No such file or directory: '/users/jolinqiu/downloads/.com.google.chrome.mc06cd'&#10;&#10;Process finished with exit code 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="error checking issues...Not sure how to handle the FNFE for things likes /users/jolinqiu/downloads/.com.google.chrome.mc06cd'(?) // where its coming from rn&#10;&#10;Terminal Output:&#10;Select a folder &amp; we will search under this umbrella directory for all the duplicate and redundant files.&#10;/Users/jolinqiu/duplicateTest/liar copy 3.png has been deleted&#10;/Users/jolinqiu/duplicateTest/exercise answers copy.pdf has been deleted&#10;/Users/jolinqiu/duplicateTest/get-pip copy.py has been deleted&#10;/users/jolinqiu/downloads/.com.google.chrome.mc06cd has been created!&#10;/Users/jolinqiu/Downloads has been modified&#10;/Users/jolinqiu/Downloads/.com.google.Chrome.mc06cD has been modified&#10;ruh roh.... someone deleted /Users/jolinqiu/Downloads/.com.google.chrome.mc06cd&#10;/Users/jolinqiu/Downloads has been modified&#10;/users/jolinqiu/downloads/.com.google.chrome.mc06cd has been created!&#10;Exception in thread Thread-1:&#10;Traceback (most recent call last):&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py&quot;, line 1016, in _bootstrap_inner&#10;    self.run()&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/observers/api.py&quot;, line 204, in run&#10;    self.dispatch_events(self.event_queue)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/observers/api.py&quot;, line 380, in dispatch_events&#10;    handler.dispatch(event)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/events.py&quot;, line 424, in dispatch&#10;    super().dispatch(event)&#10;  File &quot;/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/watchdog/events.py&quot;, line 276, in dispatch&#10;    {&#10;  File &quot;/Users/jolinqiu/CSCIprojects/Finder-Organizer/src/FileManagement.py&quot;, line 64, in on_created&#10;    os.remove(item)&#10;FileNotFoundError: [Errno 2] No such file or directory: '/users/jolinqiu/downloads/.com.google.chrome.mc06cd'&#10;&#10;Process finished with exit code 1" />
+    <MESSAGE value="modification manager" />
+    <option name="LAST_COMMIT_MESSAGE" value="modification manager" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FinderTools.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FinderTools.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FinderTools.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Finder_Organizer$FileManagement.coverage" NAME="FileManagement Coverage Results" MODIFIED="1691555478319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/Finder_Organizer$DuplicateRemover.coverage" NAME="DuplicateRemover Coverage Results" MODIFIED="1691554085926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Finder_Organizer$FileManagement.coverage" NAME="FileManagement Coverage Results" MODIFIED="1691586050577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/Finder_Organizer$DuplicateRemover.coverage" NAME="DuplicateRemover Coverage Results" MODIFIED="1691588992667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
