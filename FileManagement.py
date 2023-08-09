@@ -19,8 +19,6 @@ Note: PatternMatchingEventHandler inherits from the FileSystemEventHandler class
         event_type: modified/created/moved/deleted
         is_directory: True/False
         src_path: path/to/observe/file
-
-
 """
 # neeeded for os.scandir
 import os
@@ -34,7 +32,7 @@ from watchdog.events import PatternMatchingEventHandler
 
 filePath = "/Users/jolinqiu/Downloads"
 
-def getSumn():
+def get_sumn():
     """
 
     :return:
@@ -49,7 +47,15 @@ def getSumn():
 
 # handling all events
 def on_created(event):
-    print(f"{event.src_path} has been created!")
+    item = event.src_path.lower()
+    print(f"{item} has been created!")
+    # duplicate made ./IMG_20151231_143053 (2).jpg
+    if item.endswith(").pdf") or (").pdf") \
+            or item.endswith("copy.pdf") or item.endswith("copy.png"):
+        os.remove(item)
+    elif item.endswith(".png") or item.endswith(".pdf"):
+        print("balls")
+
 
 def on_deleted(event):
     print(f"ruh roh.... someone deleted {event.src_path}")
@@ -59,6 +65,15 @@ def on_modified(event):
 
 def on_moved(event):
     print(f"moved {event.src_path} to {event.dest_path}")
+
+# unique / special functions
+def remove_current_dupes(bool):
+    """
+    Gives the user the option to scan current directory and remove
+    existing duplicates.
+    :param bool:
+    """
+
 
 # event handler
 if __name__ == "__main__":
@@ -80,10 +95,16 @@ if __name__ == "__main__":
     my_event_handler.on_modified = on_modified
     my_event_handler.on_moved = on_moved
 
+    rmv = input("Would you like to scan and remove the current Directory "
+                "for duplicate files?\n Do note that the amount of time this "
+                "takes is variable on the amount of data you have."
+                "(Y/N)")
+    if len(rmv) is 1 and rmv.upper() is "Y":
+        remove_current_dupes(True)
+
     # ______________________
     # Initialize Observer
     observer = Observer()
-    filePath = "."
     observer.schedule(my_event_handler, filePath, recursive=True)
 
     # Start the observer
