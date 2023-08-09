@@ -20,8 +20,7 @@ from pathlib import Path
 
 unique_files = dict()
 
-
-def detect_duplicates(hashed):
+def detect_duplicates(hashed, file):
     """
     In order to detect the duplicate files, define an empty dictionary.
     Add elements to this dictionary and the key of each element
@@ -32,10 +31,10 @@ def detect_duplicates(hashed):
     :return:
     """
     if hashed in unique_files:
-        os.remove(file_path)
+        os.remove(file)
     else:
-        unique_files[hashed] = file_path
-        print(f"{file_path} has been deleted")
+        unique_files[hashed] = file
+        print(f"{file} has been deleted")
 
 
 def hash_file(files):
@@ -51,12 +50,15 @@ def hash_file(files):
             # In order to open a file we need to first have the path to it
             # os.path.join() just concatenates
             file_path = Path(os.path.join(dirPath, file))
-            # So we’ll say open the file using file path in read mode.
-            # This will convert our file into a md5 hash.
-            # hexdigest method gets the hash string
-            hashed = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
-
-            detect_duplicates(hashed)
+            # files that are links or symlinks shouldn't be deleted
+            if Path(file_path).is_symlink() is False or Path(file_path).is_file() is False:
+                # So we’ll say open the file using file path in read mode.
+                # This will convert our file into a md5 hash.
+                # hexdigest method gets the hash string
+                hashed = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
+                detect_duplicates(hashed, file_path)
+            else:
+                break
 
 
 if __name__ == "__main__":
@@ -72,18 +74,3 @@ if __name__ == "__main__":
     list_of_files = os.walk(file_path)
     # remove duplicate files
     hash_file(list_of_files)
-
-# /usr/local/bin/python3.10 /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/DuplicateRemover.py
-# select a folder & we will search under this umbrella directory for all the duplicate and redundant files.
-# /Users/jolinqiu/testdupes has been deleted
-# Traceback (most recent call last):
-#   File "/Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/DuplicateRemover.py", line 74, in <module>
-#     hash_file(list_of_files, file_path)
-#   File "/Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/DuplicateRemover.py", line 59, in hash_file
-#     detect_duplicates(hashed, unique_files)
-#   File "/Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/DuplicateRemover.py", line 33, in detect_duplicates
-#     os.remove(file_path)
-# PermissionError: [Errno 1] Operation not permitted: '/Users/jolinqiu/testdupes'
-#
-# Process finished with exit code 1
-
