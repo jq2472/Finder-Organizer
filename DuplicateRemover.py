@@ -18,7 +18,9 @@ import os
 import hashlib
 from pathlib import Path
 
+
 unique_files = dict()
+
 
 def detect_duplicates(hashed, file):
     """
@@ -31,10 +33,11 @@ def detect_duplicates(hashed, file):
     :return:
     """
     if hashed in unique_files:
-        os.remove(file)
+        if os.path.exists(file):
+            os.remove(file)
+        print(f"{file} has been deleted")
     else:
         unique_files[hashed] = file
-        print(f"{file} has been deleted")
 
 
 def hash_file(files):

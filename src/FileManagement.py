@@ -20,39 +20,24 @@ Note: PatternMatchingEventHandler inherits from the FileSystemEventHandler class
         is_directory: True/False
         src_path: path/to/observe/file
 """
-# neeeded for os.scandir
+# needed for os.scandir
 import os
 # initially imported modules
-import sys
+import shutil
 import time
-import logging
-import tkinter
-from tkinter import *
 
-from watchdog.observers import Observer
+import pymsgbox
 # make changes at a time a file is created or modified
 from watchdog.events import PatternMatchingEventHandler
+from watchdog.observers import Observer
 
 import DuplicateRemover
-import pymsgbox
-
 
 filePath = "/Users/jolinqiu/Downloads"
-
-
-def get_sumn():
-    """
-
-    :return:
-    """
-    # os.scandir() returns a Python iterable containing the names of the files
-    # and subdirectories in the directory given by the path argument:
-    # items = os.scandir(filePath)
-
-    with os.scandir(filePath) as items:
-        for item in items:
-            print(item.name)
-
+dest_dir_sfx = "/Users/jolinqiu/Downloads/Sound"
+dest_dir_music = "/Users/jolinqiu/Downloads/Sound/Music"
+dest_dir_image =  "/Users/jolinqiu/Downloads/Downloaded Videos"
+dest_dir_video =  "/Users/jolinqiu/Downloads/Downloaded Images"
 
 # handling all events
 def on_created(event):
@@ -70,8 +55,34 @@ def on_deleted(event):
     print(f"ruh roh.... someone deleted {event.src_path}")
 
 
+def move(dest, entry, name):
+    file_exists = os.path.exists(dest + "/" + name)
+    if file_exists:
+        shutil.move(entry, dest)
+
+
 def on_modified(event):
+    # os.scandir() returns a Python iterable containing the names of the files
+    #  and subdirectories in the directory given by the path argument:
+    #  items = os.scandir(filePath)
+    with os.scandir(filePath) as items:
+        for item in items:
+            name = item.name
+            dest = filePath
+            if name.endswith(".wav") or name.endswith("mp3"):
+                if (item.stat().st_size < 25000000) or "SFX" in name:
+                    dest = dest_dir_sfx
+                else:
+                    dest = dest_dir_music
+                move(dest, item, name)
+            elif name.endswith(".mov") or name.endswith(".mp4"):
+                dest = dest_dir_video
+                move(dest, item, name)
+            elif name.endswith(".jpg") or name.endswith(".jpeg") or name.endswith(".png"):
+                dest = dest_dir_image
+                move(dest, item, name)
     print(f"{event.src_path} has been modified")
+
 
 
 def on_moved(event):
@@ -79,13 +90,14 @@ def on_moved(event):
 
 
 # unique / special functions
-def remove_current_dupes(usr_response):
+def remove_current_dupes(response):
     """
     Gives the user the option to scan current directory and remove
     existing duplicates.
-    :param bool:
+    :param response:
     """
-    DuplicateRemover.main()
+    if response is True:
+        DuplicateRemover.main()
 
 
 # event handler
@@ -97,41 +109,23 @@ if __name__ == "__main__":
     ignore_patterns = None
     ignore_directories = False
     case_sensitive = True
-    # ______________________
     # Initialize event handler
     my_event_handler = PatternMatchingEventHandler(patterns, ignore_patterns, ignore_directories, case_sensitive)
-
-    # ______________________
     # specify to the handler that we want these functions to be called when the corresponding event is raised
     my_event_handler.on_created = on_created
     my_event_handler.on_deleted = on_deleted
     my_event_handler.on_modified = on_modified
     my_event_handler.on_moved = on_moved
 
-    # window = Tk()
-    # window.wm_withdraw()
-    # window.geometry("1x1+"+str(window.winfo_screenwidth()/2)+"+"+str(window.winfo_screenheight()/2))
-    # tkMessageBox.showinfo(title="Greetings", message="Hello World!")
-
     response = pymsgbox.prompt("Would you like to scan and remove the current Directory "
                 "for duplicate files?\nDo note that the amount of time this "
                 "takes is variable on the amount of data you have. "
                 "(Y/N)")
-
-    # tkinter.messagebox.askyesno(title=None, message=None, **options)
-    # tkinter.messagebox.askyesnocancel(title=None, message=None, **options)
-
-    # rmv = input("Would you like to scan and remove the current Directory "
-    #             "for duplicate files?\nDo note that the amount of time this "
-    #             "takes is variable on the amount of data you have. "
-    #             "(Y/N)")
     if len(response) == 1 and response.upper() == "Y":
         remove_current_dupes(True)
-    # ______________________
     # Initialize Observer
     observer = Observer()
     observer.schedule(my_event_handler, filePath, recursive=True)
-
     # Start the observer
     observer.start()
     try:
