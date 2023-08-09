@@ -26,11 +26,19 @@ import os
 import sys
 import time
 import logging
+import tkinter
+from tkinter import *
+
 from watchdog.observers import Observer
 # make changes at a time a file is created or modified
 from watchdog.events import PatternMatchingEventHandler
 
+import DuplicateRemover
+import pymsgbox
+
+
 filePath = "/Users/jolinqiu/Downloads"
+
 
 def get_sumn():
     """
@@ -44,6 +52,7 @@ def get_sumn():
     with os.scandir(filePath) as items:
         for item in items:
             print(item.name)
+
 
 # handling all events
 def on_created(event):
@@ -60,19 +69,23 @@ def on_created(event):
 def on_deleted(event):
     print(f"ruh roh.... someone deleted {event.src_path}")
 
+
 def on_modified(event):
     print(f"{event.src_path} has been modified")
+
 
 def on_moved(event):
     print(f"moved {event.src_path} to {event.dest_path}")
 
+
 # unique / special functions
-def remove_current_dupes(bool):
+def remove_current_dupes(usr_response):
     """
     Gives the user the option to scan current directory and remove
     existing duplicates.
     :param bool:
     """
+    DuplicateRemover.main()
 
 
 # event handler
@@ -95,13 +108,25 @@ if __name__ == "__main__":
     my_event_handler.on_modified = on_modified
     my_event_handler.on_moved = on_moved
 
-    rmv = input("Would you like to scan and remove the current Directory "
-                "for duplicate files?\n Do note that the amount of time this "
-                "takes is variable on the amount of data you have."
-                "(Y/N)")
-    if len(rmv) is 1 and rmv.upper() is "Y":
-        remove_current_dupes(True)
+    # window = Tk()
+    # window.wm_withdraw()
+    # window.geometry("1x1+"+str(window.winfo_screenwidth()/2)+"+"+str(window.winfo_screenheight()/2))
+    # tkMessageBox.showinfo(title="Greetings", message="Hello World!")
 
+    response = pymsgbox.prompt("Would you like to scan and remove the current Directory "
+                "for duplicate files?\nDo note that the amount of time this "
+                "takes is variable on the amount of data you have. "
+                "(Y/N)")
+
+    # tkinter.messagebox.askyesno(title=None, message=None, **options)
+    # tkinter.messagebox.askyesnocancel(title=None, message=None, **options)
+
+    # rmv = input("Would you like to scan and remove the current Directory "
+    #             "for duplicate files?\nDo note that the amount of time this "
+    #             "takes is variable on the amount of data you have. "
+    #             "(Y/N)")
+    if len(response) == 1 and response.upper() == "Y":
+        remove_current_dupes(True)
     # ______________________
     # Initialize Observer
     observer = Observer()

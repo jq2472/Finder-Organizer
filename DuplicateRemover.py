@@ -61,9 +61,9 @@ def hash_file(files):
                 break
 
 
-if __name__ == "__main__":
+def main():
     Tk().withdraw()
-    print("select a folder & we will search under this umbrella directory for all the duplicate and redundant files.")
+    print("Select a folder & we will search under this umbrella directory for all the duplicate and redundant files.")
     file_path = askdirectory(title="Select a folder")
     # # Directory Path:  /Users/jolinqiu/Downloads/drive-download-20220425T185745Z-001/7 pir8s golds
     #     # 	File Name:  .DS_Store
@@ -74,3 +74,7 @@ if __name__ == "__main__":
     list_of_files = os.walk(file_path)
     # remove duplicate files
     hash_file(list_of_files)
+
+
+if __name__ == "__main__":
+    main()
