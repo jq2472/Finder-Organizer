@@ -73,4 +73,17 @@ if __name__ == "__main__":
     # remove duplicate files
     hash_file(list_of_files)
 
+# /usr/local/bin/python3.10 /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/DuplicateRemover.py
+# select a folder & we will search under this umbrella directory for all the duplicate and redundant files.
+# /Users/jolinqiu/testdupes has been deleted
+# Traceback (most recent call last):
+#   File "/Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/DuplicateRemover.py", line 74, in <module>
+#     hash_file(list_of_files, file_path)
+#   File "/Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/DuplicateRemover.py", line 59, in hash_file
+#     detect_duplicates(hashed, unique_files)
+#   File "/Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/DuplicateRemover.py", line 33, in detect_duplicates
+#     os.remove(file_path)
+# PermissionError: [Errno 1] Operation not permitted: '/Users/jolinqiu/testdupes'
+#
+# Process finished with exit code 1
 
