@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f978c98-5e2a-41e2-bce1-7fe40799b446" name="Changes" comment="">
+    <list default="true" id="5f978c98-5e2a-41e2-bce1-7fe40799b446" name="Changes" comment="currently only tracks changes using watchdog in the current directory : &#10;2023-08-08 19:52:21 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:21 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:28 - Deleted file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:28 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store&#10;2023-08-08 19:52:45 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Modified file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileManagement.py" afterDir="false" />
     </list>
@@ -68,8 +68,23 @@
       <workItem from="1691506409765" duration="52000" />
       <workItem from="1691506471670" duration="217000" />
       <workItem from="1691512849999" duration="1000" />
-      <workItem from="1691522094646" duration="5396000" />
+      <workItem from="1691522094646" duration="7362000" />
     </task>
+    <task id="LOCAL-00001" summary="currently only tracks changes using watchdog in the current directory : &#10;2023-08-08 19:52:21 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:21 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:28 - Deleted file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:28 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store&#10;2023-08-08 19:52:45 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Modified file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store">
+      <created>1691538814182</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691538814182</updated>
+    </task>
+    <task id="LOCAL-00002" summary="currently only tracks changes using watchdog in the current directory : &#10;2023-08-08 19:52:21 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:21 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:28 - Deleted file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:28 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store&#10;2023-08-08 19:52:45 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Modified file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store">
+      <created>1691538832805</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691538832805</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,7 +101,11 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="currently only tracks changes using watchdog in the current directory : &#10;2023-08-08 19:52:21 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:21 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:28 - Deleted file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:28 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store&#10;2023-08-08 19:52:45 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Modified file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store" />
+    <option name="LAST_COMMIT_MESSAGE" value="currently only tracks changes using watchdog in the current directory : &#10;2023-08-08 19:52:21 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:21 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:28 - Deleted file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/cs_queue.py&#10;2023-08-08 19:52:28 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Created file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store&#10;2023-08-08 19:52:45 - Modified directory: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer&#10;2023-08-08 19:52:45 - Modified file: /Users/jolinqiu/CSCIprojects/CSCIhomework/Finder-Organizer/.DS_Store" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Finder_Organizer$FileManagement.coverage" NAME="FileManagement Coverage Results" MODIFIED="1691538373816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Finder_Organizer$FileManagement.coverage" NAME="FileManagement Coverage Results" MODIFIED="1691540605303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
