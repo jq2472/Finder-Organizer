@@ -29,13 +29,7 @@ Using MAC OS
   * https://pythonhosted.org/watchdog/
   * https://pypi.org/project/watchdog/
   * https://stackoverflow.com/questions/32387023/os-walk-vs-os-scandir
-  * 
+    
 
 [ tutorials ]
  * https://www.youtube.com/watch?v=NCvI-K0Gp90
-
-[ questions raised ] 
-  * what exactly is a src directory for? whats the proper protocol, or best practices to use it?
-    it seems that its code that "cant" be edited / some sort of root-thing when you work
-    on much bigger projects but I'm still not that sure
-  * 
